@@ -49,4 +49,17 @@ Where # is the specific number of Jobs (i.e., threads used for parallel syncing)
 
 Then to build:
 
-    Coming soon.
+1. Open Eclipse;
+2. Import the Project;
+3. Remove all broken external builders (NDK and Ant builders don't tranfer well);
+4. Add an NDK Builder with Location:
+  * set to tha path to "ndk-build", and working directory set to;
+  * set Working Directory to the directory in which you repo synced (i.e., ${workspace\_loc:/dnsqache});
+  * set the Refresh tab to "Specific resourses" and point to dnasqche/libs
+  * set the Build Options to include After a Clean, During manual builds, During a Clean and Specify working set of relevant resources, with the latter pointing to dnsqache/jni;
+5. Add an Ant build called "Ant Assets Builder":
+  * set the Buildfile to your ${workspace\_loc/dnsqache/build.xml};
+  * set the Base directory to your ${workspace\_loc:/dnsqache};
+  * set Refresh (tab) to Specific Resources pointing to "dnsqache/res/raw";
+  * set Build Options to include Specify working set of relevant resources, with the latter pointing to dnsqache/libs;
+6. Build in Eclipse.
