@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Generic Github remote -->
+  <remote  name="apps"
+           fetch="https://github.com/Android-Apps" />
+
+  <!-- Defaults for repo -->
+  <default remote="apps"
+           sync-c="true"
+           sync-j="4"
+           revision="master" />
+
+  <!-- DnsQache -->
+  <project path="." name="DnsQache" remote="apps" />
+  <project path="jni/polipo" name="polipo" remote="apps" />
+  <project path="jni/tinyproxy" name="tinyproxy" remote="apps" />
+  <project path="jni/dnsmasq" name="dnsmasq" remote="apps" revision="2.65-release-branch" />
+</manifest>
